@@ -11,6 +11,7 @@ yarn add vue-bpmn-modeler
 import VueBpmnModeler from "vue-bpmn-modeler";
 Vue.use(VueBpmnModeler);
 ```
+git remote set-url origin git@github.com:lzk2636/bpmn.git
 
 ```html
 # yourPage.vue
@@ -19,12 +20,14 @@ Vue.use(VueBpmnModeler);
 </style>
 ```
 ![viewer](http://image.ulitom.com/other/modeler.png)
+git remote set-url origin  https://github.com/lzk2636/bpmn.git
 
 组件会显示设计器，参数 v-model="modeler"，会通过画图操作实时返回对应的xml数据和svg数据，用于保存初始化的模板。
 ```html
 <template>
   <BpmnModeler v-model="modeler"></BpmnModeler>
 </template>
+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
 
 <script>
   export default {

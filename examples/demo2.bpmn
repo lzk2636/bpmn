@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+    xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0"
+    xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+    xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+    xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
+    <bpmn:process id="P4c9e5cb37acfc93a0bbd24d2b8199b277" name="额外工时申请流程" isExecutable="false"
+        code="null" enName="extraWorkingHours"
+        formUrl="" procDefId="484a57a93b2248218e279fd1a85c612d" procDescribe="null">
+        <bpmn:startEvent id="S73ef765e2484cb6b829590bb943c5b7">
+            <bpmn:outgoing>
+                SequenceFlow_0hlm0mh</bpmn:outgoing>
+        </bpmn:startEvent>
+        <bpmn:userTask id="Ue7be4c211089709915541bae0e6b5b7" name="提出申请"
+            enName="null" taskType="1">
+            <bpmn:extensionElements />
+            <bpmn:incoming>
+                SequenceFlow_0hlm0mh</bpmn:incoming>
+            <bpmn:outgoing>SequenceFlow_13gcbix</bpmn:outgoing>
+        </bpmn:userTask>
+        <bpmn:userTask id="U6e2482b2c20967c90192cd10edd5eef" name="项目经理审核(手动选择)" enName="null"
+            taskType="1">
+            <bpmn:extensionElements />
+            <bpmn:incoming>
+                SequenceFlow_13gcbix</bpmn:incoming>
+            <bpmn:outgoing>SequenceFlow_1t6nj4j</bpmn:outgoing>
+        </bpmn:userTask>
+        <bpmn:userTask id="U9ab47d32cf02d359a7f3d8ca073ffc9" name="开发团队负责人确认(手动选择)" enName="null"
+            taskType="1">
+            <bpmn:extensionElements />
+            <bpmn:incoming>
+                SequenceFlow_1t6nj4j</bpmn:incoming>
+            <bpmn:outgoing>SequenceFlow_1059fi3</bpmn:outgoing>
+        </bpmn:userTask>
+        <bpmn:sequenceFlow id="SequenceFlow_0hlm0mh" sourceRef="S73ef765e2484cb6b829590bb943c5b7"
+            targetRef="Ue7be4c211089709915541bae0e6b5b7" />
+        <bpmn:sequenceFlow id="SequenceFlow_13gcbix"
+            sourceRef="Ue7be4c211089709915541bae0e6b5b7"
+            targetRef="U6e2482b2c20967c90192cd10edd5eef">
+            <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[${execution.getVariable("v_psc_U6e2482b2c20967c90192cd10edd5eef") != null && execution.getVariable("v_psc_U6e2482b2c20967c90192cd10edd5eef") == 'true'}]]></bpmn:conditionExpression>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow id="SequenceFlow_1t6nj4j" sourceRef="U6e2482b2c20967c90192cd10edd5eef"
+            targetRef="U9ab47d32cf02d359a7f3d8ca073ffc9">
+            <bpmn:conditionExpression
+                xsi:type="bpmn:tFormalExpression"><![CDATA[${execution.getVariable("v_psc_U9ab47d32cf02d359a7f3d8ca073ffc9") != null && execution.getVariable("v_psc_U9ab47d32cf02d359a7f3d8ca073ffc9") == 'true'}]]></bpmn:conditionExpression>
+        </bpmn:sequenceFlow>
+        <bpmn:endEvent
+            id="Ec4bc946f9951c15bea1169a024b6f01" name="结束环节" enName="null" taskType="1">
+            <bpmn:incoming>SequenceFlow_1059fi3</bpmn:incoming>
+        </bpmn:endEvent>
+        <bpmn:sequenceFlow id="SequenceFlow_1059fi3" sourceRef="U9ab47d32cf02d359a7f3d8ca073ffc9"
+            targetRef="Ec4bc946f9951c15bea1169a024b6f01" />
+    </bpmn:process>
+    <bpmndi:BPMNDiagram
+        id="BPMNDiagram_1">
+        <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="P4c9e5cb37acfc93a0bbd24d2b8199b2">
+            <bpmndi:BPMNShape
+                id="_BPMNShape_StartEvent_2" bpmnElement="S73ef765e2484cb6b829590bb943c5b7"
+                bioc:stroke="#13A0EB" bioc:fill="#FFFFFF">
+                <dc:Bounds x="162" y="102" width="36"
+                    height="36" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="Ue7be4c211089709915541bae0e6b5b7_di"
+                bpmnElement="Ue7be4c211089709915541bae0e6b5b7"
+                bioc:stroke="#FFFFFF" bioc:fill="#13A0EB">
+                <dc:Bounds x="240" y="88" width="100" height="65" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="U6e2482b2c20967c90192cd10edd5eef_di"
+                bpmnElement="U6e2482b2c20967c90192cd10edd5eef" bioc:stroke="#FFFFFF"
+                bioc:fill="#13A0EB">
+                <dc:Bounds x="390"
+                    y="88" width="100" height="65" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="U9ab47d32cf02d359a7f3d8ca073ffc9_di"
+                bpmnElement="U9ab47d32cf02d359a7f3d8ca073ffc9" bioc:stroke="#FFFFFF"
+                bioc:fill="#13A0EB">
+                <dc:Bounds x="550" y="88" width="100"
+                    height="65" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNEdge id="SequenceFlow_0hlm0mh_di" bpmnElement="SequenceFlow_0hlm0mh"
+                bioc:stroke="#13A0EB" bioc:fill="none">
+                <di:waypoint x="198" y="120" />
+                <di:waypoint x="240" y="121" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="SequenceFlow_13gcbix_di" bpmnElement="SequenceFlow_13gcbix"
+                bioc:stroke="#13A0EB" bioc:fill="none">
+                <di:waypoint
+                    x="340" y="121" />
+                <di:waypoint x="390" y="121" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge
+                id="SequenceFlow_1t6nj4j_di" bpmnElement="SequenceFlow_1t6nj4j"
+                bioc:stroke="#13A0EB" bioc:fill="none">
+                <di:waypoint x="490" y="121" />
+                <di:waypoint
+                    x="550" y="121" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNShape id="Ec4bc946f9951c15bea1169a024b6f01_di"
+                bpmnElement="Ec4bc946f9951c15bea1169a024b6f01"
+                bioc:stroke="#13A0EB" bioc:fill="none">
+                <dc:Bounds x="712" y="103" width="36" height="36" />
+                <bpmndi:BPMNLabel>
+                    <dc:Bounds x="708" y="142" width="44" height="14" />
+                </bpmndi:BPMNLabel>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNEdge
+                id="SequenceFlow_1059fi3_di" bpmnElement="SequenceFlow_1059fi3"
+                bioc:stroke="#13A0EB" bioc:fill="none">
+                <di:waypoint x="650"
+                    y="121" />
+                <di:waypoint x="712" y="121" />
+            </bpmndi:BPMNEdge>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</bpmn:definitions>
