@@ -27,7 +27,7 @@ git remote set-url origin  https://github.com/lzk2636/bpmn.git
 <template>
   <BpmnModeler v-model="modeler"></BpmnModeler>
 </template>
-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
+
 
 <script>
   export default {
@@ -161,7 +161,7 @@ addTask () {
 ## Examples
 ```bash
 # clone the project
-git clone https://github.com/evanyangg/vue-bpmn-modeler.git
+git clone https://github.com/lzk2636/bpmn.git
 
 # enter the project directory
 cd vue-bpmn-modeler
@@ -173,5 +173,5 @@ yarn
 yarn serve
 ```
 ## License
-MIT 
+线上dome
 http://23.94.40.224:3000/web/index.html
